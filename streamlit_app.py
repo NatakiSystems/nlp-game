@@ -54,7 +54,7 @@ if st.button("Calculate Superstar Score ✨"):
     docs_with_term = sum(1 for text in docs.values() if target_word in text.lower().split())
     
     # Calculate IDF
-    idf = math.log(N / docs_with_term) if docs_with_word > 0 else 0
+    idf = math.log(N / docs_with_term) if docs_with_term > 0 else 0
     
     st.write(f"🔍 **Background Noise Score (IDF)** for *'{target_word}'*: `{round(idf, 4)}` (Lower means it is common noise across books!)")
     
